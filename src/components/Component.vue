@@ -1,31 +1,30 @@
 <template>
-    <div class="user-card">
-        <img src="../assets/70.jpg" class="user-photo">
-        <p class="user-nickname">romashka</p>
-        <p class="user-name">
-            Иванов Иван<br>
-            Иванович
-        </p>
-        <hr>
-        <p class="user-info-item">
-            <img src="../assets/location.png">
-            Москва, Юбилейная 50
-        </p>
-        <p class="user-info-item">
-            <img src="../assets/mail.png">
-            coldrabbit48@example.com
-        </p>
-        <p class="user-info-item">
-            <img src="../assets/phone.png">
-            +7-495-266-57-34
-        </p>
-    </div>
+  <div class="user-card">
+    <img :src="values.imglink" class="user-photo" />
+    <p class="user-nickname">{{ values.nickname }}</p>
+    <p class="user-name">
+      {{ values.name }}
+    </p>
+    <hr />
+    <p class="user-info-item">
+      <img src="../assets/location.png" />
+      {{ values.adress }}
+    </p>
+    <p class="user-info-item">
+      <img src="../assets/mail.png" />
+      {{ values.email }}
+    </p>
+    <p class="user-info-item">
+      <img src="../assets/phone.png" />
+      {{ values.phone }}
+    </p>
+  </div>
 </template>
 
 <script>
-export default{
-  name: 'user'
-}
+export default {
+  props: ["values"],
+};
 </script>
 
 <style>

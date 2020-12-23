@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <user></user>
+    <user v-bind:values="values"/>
   </div>
 </template>
 
@@ -11,6 +11,18 @@ export default {
   name: 'app',
   components: {
     user
+  },
+  data() {
+    return {
+        values: {
+            imglink: '../assets/70.jpg',
+            nickname: 'romashka',
+            name: 'Иванов Иван Иванович',
+            adress: 'Москва, Юбилейная 50',
+            email: 'coldrabbit48@example.com',
+            phone: '+7-495-266-57-34'
+        }
+    }
   }
 }
 </script>
