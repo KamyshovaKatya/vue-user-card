@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <user v-bind:values="values"/>
+    <button v-on:click="getUserData()">Обновить</button>
   </div>
 </template>
 
@@ -14,15 +15,19 @@ export default {
   },
   data() {
     return {
-        values: {
-            imglink: '../assets/70.jpg',
-            nickname: 'romashka',
-            name: 'Иванов Иван Иванович',
-            adress: 'Москва, Юбилейная 50',
-            email: 'coldrabbit48@example.com',
-            phone: '+7-495-266-57-34'
-        }
+        values: {}
     }
+  },
+  methods: {
+        getUserData(){
+            this.axios.get('http://37.77.104.246/users/getrandom.php')
+                .then((response) => {
+                    this.values = response.data;
+            })
+        }
+  },
+  mounted() {
+    this.getUserData();
   }
 }
 </script>

@@ -1,14 +1,13 @@
 <template>
   <div class="user-card">
-    <img :src="values.imglink" class="user-photo" />
-    <p class="user-nickname">{{ values.nickname }}</p>
+    <img :src="values.img" class="user-photo" />
     <p class="user-name">
-      {{ values.name }}
+      {{ values.firstName }} {{ values.lastName }}
     </p>
     <hr />
     <p class="user-info-item">
       <img src="../assets/location.png" />
-      {{ values.adress }}
+      {{ values.country }}, {{ values.city }}, {{ values.street }}, {{ values.houseNumber }}
     </p>
     <p class="user-info-item">
       <img src="../assets/mail.png" />
@@ -23,7 +22,7 @@
 
 <script>
 export default {
-  props: ["values"],
+  props: ['values'],
 };
 </script>
 
